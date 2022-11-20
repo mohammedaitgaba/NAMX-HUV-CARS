@@ -7,8 +7,8 @@ const hpp = require("hpp");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const globalErrHandler = require("./src/controllers/errorController");
-const AppError = require("./src/utils/appError");
+const globalErrHandler = require("./src/middlewares/errorMiddleware");
+const AppError = require("./src/middlewares/appErrorMiddleware");
 const app = express();
 
 // Allow Cross-Origin requests
