@@ -2,12 +2,17 @@ const mongoose = require("mongoose");
 const Details = mongoose.model(
     "Details",
     new mongoose.Schema({
-        key : {
+        Car : {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Cars",
+        },
+        Key : {
             type:String,
             required:true,
+            unique:true
         },
-        value:{
-            type:String,
+        Value:{
+            type:[String],
             required:true,
         }
     })

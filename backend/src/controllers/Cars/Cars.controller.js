@@ -1,13 +1,22 @@
-const asyncHnadler = require('express-async-handler')
-const Car = require('../../models/car.model')
+const Car = require("../../models/Car.model");
 
+const getAllCars = async (req, res) => {
+  const car = await Car.find({});
+  res.json({ car });
+};
+const setCar = async (req, res) => {
+  const { Name, Price } = req.body;
+  const car = await Car.create({
+    Name,
+    Price,
+  });
+  if (!car) {
+    res.status(500).send({ message: "Error data" });
+  }
+  return res.json({ message: "Car Created successfuly" });
+};
 
-const getAllCars = asyncHnadler(async(req,res)=>{
-    // const car =  await Car.find({})
-    res.json({message:"getAllCars"})
-    
-})
-
-module.exports={
-    getAllCars,
-}
+module.exports = {
+  getAllCars,
+  setCar,
+};
