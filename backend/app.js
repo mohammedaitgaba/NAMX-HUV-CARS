@@ -6,6 +6,8 @@ const xss = require("xss-clean");
 const hpp = require("hpp");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const colors = require('colors')
+
 
 const globalErrHandler = require("./src/middlewares/errorMiddleware");
 const AppError = require("./src/middlewares/appErrorMiddleware");
