@@ -6,7 +6,11 @@ const PreOrders = mongoose.model(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Cars",
     },
-    details:[
+    Maker:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
+    Details:[
       {
         key:{
           type:String,
@@ -17,7 +21,16 @@ const PreOrders = mongoose.model(
           required:true
         }
       }
-    ]
-  })
+    ],
+    Confirmed:{
+      type:Boolean,
+      default:false
+    },
+    Deleted:{
+      type:Boolean,
+      default:false
+    },
+    
+  },{ timestamps: true })
 );
 module.exports = PreOrders;
