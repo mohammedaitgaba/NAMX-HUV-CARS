@@ -11,7 +11,6 @@ const Details = mongoose.model(
             required:true,
             unique:true
         },
-        
         Value:{
             type:[String],
             required:true,
