@@ -8,10 +8,8 @@ const User = mongoose.model(
       type: String,
       required: true,
     },
-    age: {
-      type: Number,
-      min: 18,
-      max: 100,
+    dateOfBirth: {
+      type: Date,
       required: true,
     },
     email: {
