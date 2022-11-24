@@ -12,6 +12,7 @@ const setCarDetails = async (req, res) => {
       message: "Please fill all required fields",
     });
   }
+
   const Details = await CarDetails.create({
     Car,
     Key,
@@ -23,7 +24,17 @@ const setCarDetails = async (req, res) => {
   return res.json({ message: "CarDetails Created successfuly" });
 };
 
+const UpdateCarDetail = async (req, res) => {
+
+}
+
+const DeleteCarDetail = async (req, res) => {
+
+}
+
 module.exports = {
   getAllCarDetails,
   setCarDetails,
+  UpdateCarDetail,
+  DeleteCarDetail
 };
