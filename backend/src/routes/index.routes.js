@@ -4,4 +4,5 @@ module.exports = function (app, url) {
   require("./CarDetails.routes")(app, url);
   require("./PreOrder.routes")(app, url);
   require("./Profile.routes")(app, url);
+  require("./Car/CarColor.routes")(app, url);
 };
