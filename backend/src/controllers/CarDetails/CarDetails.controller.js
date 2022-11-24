@@ -29,7 +29,7 @@ const UpdateCarDetail = async (req, res) => {
   const Details = await CarDetails.findById(req.params.id)
   
   if(!Details) {
-    res.status(401).send({message: "Invalide Param" })
+    res.status(401).send({message: "Invalide Params" })
   };
   
   if(Object.values(req.body).some((e) => !e)) {
@@ -38,9 +38,12 @@ const UpdateCarDetail = async (req, res) => {
     });
   }
 
-  const UpdateDetail = await CarDetails.findByIdAndUpdate(req.param.id, req.body, {
+  const UpdateDetail = await CarDetails.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })
+
+  res.send(UpdateDetail);
+  console.log(UpdateDetail);
 
   res.status(201).json(UpdateDetail)
 }
