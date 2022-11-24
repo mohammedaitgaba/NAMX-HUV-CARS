@@ -1,0 +1,22 @@
+{
+  "name": "namx-huv-cars",
+  "version": "1.0.0",
+  "description": "\"Faouzi ANNAJAH\", wants to share the immense experience of the NAMX HUV the largest fuel cell SUV.The request of the CEO &amp; Founder at NamX is to share the immersive experience of the largest HUV:  To present the performance indicators of the vehicle in a futuristic way, creates the process pre-ordered on the website of the brand.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npm run dev --prefix backend",
+    "client": "npm start --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedaitgaba/NAMX-HUV-CARS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammedaitgaba/NAMX-HUV-CARS/issues"
+  },
+  "homepage": "https://github.com/mohammedaitgaba/NAMX-HUV-CARS#readme"
+}
