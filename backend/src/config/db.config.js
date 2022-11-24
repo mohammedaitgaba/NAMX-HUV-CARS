@@ -12,7 +12,7 @@ const connectDB = async () => {
       }
     )
     .then(() => {
-      console.log("Successfully connect to MongoDB. Happy Cruding".underline.cyan);
+      console.log("Successfully connect to MongoDB. Happy Cruding");
     })
     .catch((err) => {
       console.error("Connection error", err);

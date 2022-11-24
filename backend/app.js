@@ -6,8 +6,6 @@ const xss = require("xss-clean");
 const hpp = require("hpp");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const colors = require('colors')
-
 
 const globalErrHandler = require("./src/middlewares/errorMiddleware");
 const AppError = require("./src/middlewares/appErrorMiddleware");
@@ -49,7 +47,7 @@ app.use(hpp());
 /* Parsing the body of the request. */
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 
-require("./src/routes/index.routes")(app, "/api/v1/mekna7");
+require("./src/routes/index.routes")(app, "/api/v1/NAMAX");
 
 // // handle undefined Routes
 app.use("*", (req, res, next) => {
