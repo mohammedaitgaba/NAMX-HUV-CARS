@@ -50,6 +50,15 @@ const UpdateCarDetail = async (req, res) => {
 
 const DeleteCarDetail = async (req, res) => {
 
+  const Delete = await CarDetails.findById(req.params.id)
+
+  if(!Delete) {
+    res.status(401).send({ message: "Invalide Params" })
+  }
+
+  const Deleted = await CarDetails.findByIdAndDelete(req.params.id, { $set: { isDeleted: true }})
+
+  res.status(201).json(Deleted)
 }
 
 module.exports = {

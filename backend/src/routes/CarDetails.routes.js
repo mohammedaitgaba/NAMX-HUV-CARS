@@ -8,5 +8,5 @@ module.exports = function (app, url) {
   router.get("/CarDetails", controller.getAllCarDetails);
   router.post("/CarDetails", controller.setCarDetails);
   router.put("/UpdateCarDetails/:id", controller.UpdateCarDetail);
-  router.delete("/CarDetails/:id", controller.DeleteCarDetail)
+  router.delete("/DeleteCarDetails/:id", controller.DeleteCarDetail)
 };
