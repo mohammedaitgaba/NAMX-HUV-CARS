@@ -14,7 +14,12 @@ const Details = mongoose.model(
         Value:{
             type:[String],
             required:true,
-        }
+        },
+
+        isDeleted: {
+            type: Boolean,
+            default: false
+        },
     })
 )
 module.exports = Details
