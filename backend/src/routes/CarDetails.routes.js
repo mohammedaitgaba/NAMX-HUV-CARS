@@ -7,6 +7,6 @@ module.exports = function (app, url) {
   app.use(url, router);
   router.get("/CarDetails", controller.getAllCarDetails);
   router.post("/CarDetails", controller.setCarDetails);
-  router.put("/CarDetail", controller.UpdateCarDetail);
-  router.delete("/CarDetail", controller.DeleteCarDetail)
+  router.put("/UpdateCarDetails/:id", controller.UpdateCarDetail);
+  router.delete("/CarDetails/:id", controller.DeleteCarDetail)
 };
