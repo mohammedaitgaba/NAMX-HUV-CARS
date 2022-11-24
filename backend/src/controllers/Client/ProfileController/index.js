@@ -18,3 +18,8 @@ exports.UpdateProfile = (req, res) => {
     }
   );
 };
+exports.GetProfile = (req, res) => {
+  User.findById(req.params.id, (err, user) => {
+    err ? AppError(err) : res.send(user);
+  });
+};
