@@ -1,4 +1,4 @@
-const PreOrder = require("../../models/PreOrder.model");
+const PreOrder = require("../../models/PreOrder/PreOrder.model");
 const AppError = require("../../middlewares/appErrorMiddleware");
 const Error = require("../../middlewares/errorMiddleware");
 
