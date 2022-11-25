@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { authJwt } = require("../../middlewares");
-const controller = require("../../controllers/CarColors");
+const controller = require("../../controllers/Cars/CarColors.controller");
 
 module.exports = function (app, url) {
   app.use(url, router);

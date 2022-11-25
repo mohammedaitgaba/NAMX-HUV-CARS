@@ -1,5 +1,5 @@
 "use strict";
-const db = require("../models/auth");
+const db = require("../../models/auth");
 const User = db.user;
 const Role = db.role;
 
