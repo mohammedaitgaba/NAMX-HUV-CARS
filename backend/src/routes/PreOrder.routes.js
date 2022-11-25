@@ -14,4 +14,5 @@ module.exports = function (app, url) {
     .get(controller.getPreOrderById)
     .put(controller.updatePreOrder)
     .delete(controller.deletePreOrder)
+  router.put("/ConfirmPreOrder/:id",controller.confirmPreOrder)
 };

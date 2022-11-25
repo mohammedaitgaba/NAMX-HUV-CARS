@@ -3,7 +3,9 @@ const AppError = require("../../middlewares/appErrorMiddleware");
 const Error = require("../../middlewares/errorMiddleware");
 
 const getAllPreOrders = async (req, res) => {
-  const preOrder = await PreOrder.find({});
+  const preOrder = await PreOrder.find({
+    Deleted: false
+  });
   res.json({ preOrder });
 };
 
@@ -71,10 +73,26 @@ const deletePreOrder = async (req, res) => {
       });
 };
 
+const confirmPreOrder = async (req,res)=>{
+  const PreOrderConfirmation = await PreOrder.findByIdAndUpdate(req.params.id,{
+    $set: {
+      Confirmed: true,
+    },
+  })
+  PreOrderConfirmation
+  ? res.json({
+      message: "preOrder confirmaed successfuly",
+    })
+  : res.json({
+      message: "error",
+    });
+}
+
 module.exports = {
   getAllPreOrders,
   setPreOrders,
   getPreOrderById,
   updatePreOrder,
-  deletePreOrder
+  deletePreOrder,
+  confirmPreOrder
 };
