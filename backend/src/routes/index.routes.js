@@ -5,4 +5,5 @@ module.exports = function (app, url) {
   require("./PreOrder.routes")(app, url);
   require("./Profile.routes")(app, url);
   require("./Car/CarColor.routes")(app, url);
+  require("./liveSearch.routes")(app, url);
 };
