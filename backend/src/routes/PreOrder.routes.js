@@ -7,12 +7,12 @@ module.exports = function (app, url) {
   app.use(url, router);
   router
     .route("/PreOrder")
-    .get(controller.getAllPreOrders)
-    .post(controller.setPreOrders);
+    .get([authJwt.verifyToken],controller.getAllPreOrders)
+    .post([authJwt.verifyToken],controller.setPreOrders);
   router
     .route("/PreOrder/:id")
-    .get(controller.getPreOrderById)
-    .put(controller.updatePreOrder)
-    .delete(controller.deletePreOrder)
-  router.put("/ConfirmPreOrder/:id",controller.confirmPreOrder)
+    .get([authJwt.verifyToken],controller.getPreOrderById)
+    .put([authJwt.verifyToken],controller.updatePreOrder)
+    .delete([authJwt.verifyToken],controller.deletePreOrder)
+  router.put("/ConfirmPreOrder/:id",[authJwt.verifyToken],controller.confirmPreOrder)
 };
