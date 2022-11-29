@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      primary: "#BD3944",
-      secondary: "#F2F2F2",
+      // primary and secondary are the dominant colors
+      primary: "#BD3944", // red (dark)
+      secondary: "#042E27", // green (dark)
+      tertiary: "#364966", // blue (dark)
+      // the rest follow text color when dark mode is enabled you can change the colors to match your theme
+      quaternary: "#111111", // black (dark) -> for text
+      quinary: "#FFFBF5", // white -> for text
     },
   },
   plugins: [],
