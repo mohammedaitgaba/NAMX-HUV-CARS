@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Valorant";
+  src: url("Valorant.otf");
+}
+
+:root {
+  --v-red: #ff4655;
+  --v-white: #ece8e1;
+  --v-black: #0f1923;
+  --v-outline: rgba(236, 232, 225, 0.5);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Valorant";
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 50%;
+}
+
+.logo {
+  fill: var(--v-white);
+}
+
+.betaText {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 400px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+button {
+  font-family: "DIN Next LT Pro Bold";
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 3rem;
+  position: relative;
+  display: block;
+  font-size: 1.9rem;
+  padding: 0.7rem;
+  border: 0;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--v-white);
+}
+
+button:hover {
+  color: var(--v-white);
+}
+
+button::before,
+button::after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  position: absolute;
+  height: calc(50% - 0.4rem);
+  width: 100%;
+  border: 1px solid var(--v-outline);
+  left: 0;
+}
+
+button::before {
+  border-bottom: 0;
+  top: 0;
+}
+
+button::after {
+  border-top: 0;
+  bottom: 0;
+}
+
+/* LABEL  */
+.label {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.label:before {
+  content: "";
+  height: 100%;
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+/* Hover Effect */
+.hover-effect {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  top: 0;
+  left: -5%;
+  z-index: 1;
+  background-color: var(--v-red);
+  transform: translateX(-100%) skew(-10deg);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+button:hover .hover-effect {
+  transform: translateX(0) skew(-10deg);
+}
+
+/* Label Text */
+.label-text {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.label-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.6rem;
+  width: 0.6rem;
+  right: 0;
+  bottom: 0;
+  background-color: var(--v-black);
+  transition: background-color 0.2s ease-in;
+}
+button:hover .label-text:after {
+  background-color: var(--v-white);
+}
+
+/* PRIMARY BUTTON */
+.primary {
+  color: var(--v-black);
+}
+
+.primary .label::before {
+  background-color: var(--v-white);
+}
