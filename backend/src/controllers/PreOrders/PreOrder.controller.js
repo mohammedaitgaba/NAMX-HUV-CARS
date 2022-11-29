@@ -1,10 +1,11 @@
 const PreOrder = require("../../models/PreOrder/PreOrder.model");
 const AppError = require("../../middlewares/appErrorMiddleware");
 const Error = require("../../middlewares/errorMiddleware");
+const nodemailer = require("nodemailer");
 
 const getAllPreOrders = async (req, res) => {
   const preOrder = await PreOrder.find({
-    Deleted: false
+    Deleted: false,
   });
   res.json({ preOrder });
 };
@@ -18,7 +19,7 @@ const getPreOrderById = async (req, res) => {
 };
 
 const setPreOrders = async (req, res, err) => {
-  const { id_car,Maker, Details } = req.body;
+  const { id_car, Maker, Details } = req.body;
 
   if (Object.values(req.body).some((v) => !v)) {
     return res.sendStatus(400, {
@@ -73,20 +74,48 @@ const deletePreOrder = async (req, res) => {
       });
 };
 
-const confirmPreOrder = async (req,res)=>{
-  const PreOrderConfirmation = await PreOrder.findByIdAndUpdate(req.params.id,{
+const confirmPreOrder = async (req, res) => {
+  const PreOrderConfirmation = await PreOrder.findByIdAndUpdate(req.params.id, {
     $set: {
       Confirmed: true,
     },
-  })
-  PreOrderConfirmation
-  ? res.json({
+  });
+  if (PreOrderConfirmation) {
+    // send Confirmation message to user email
+
+    let mailTransporter = nodemailer.createTransport({
+      service: 'gmail',
+      host: 'smtp.gmail.com',
+      secure : false,
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+      },
+    });
+
+    const msg = {
+      from: process.env.EMAIL, // sender address
+      to: `med010kn@gmail.com`, // list of receivers
+      subject: "preOrder NAMX confirmation", // Subject line
+      text: "Hello Dear Your preOrder confirmed sucessfully ✔ ", // plain text body
+    };
+
+    mailTransporter.sendMail(msg, function (err, data) {
+      if (err) {
+        console.log("Error Occurs", err);
+      } else {
+        console.log("Email sent successfully");
+      }
+    });
+    res.json({
       message: "preOrder confirmaed successfuly",
-    })
-  : res.json({
+    });
+  } else {
+    res.json({
       message: "error",
     });
-}
+  }
+};
 
 module.exports = {
   getAllPreOrders,
@@ -94,5 +123,5 @@ module.exports = {
   getPreOrderById,
   updatePreOrder,
   deletePreOrder,
-  confirmPreOrder
+  confirmPreOrder,
 };
