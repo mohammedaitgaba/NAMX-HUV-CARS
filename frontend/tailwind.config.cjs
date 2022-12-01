@@ -10,7 +10,8 @@ module.exports = {
       tertiary: "#364966", // blue (dark)
       // the rest follow text color when dark mode is enabled you can change the colors to match your theme
       quaternary: "#111111", // black (dark) -> for text
-      quinary: "#FFFBF5", // white -> for text
+      quinary: "white", // white -> for text
+      senary: "#232122", // bg color (dark)
     },
   },
   plugins: [],
