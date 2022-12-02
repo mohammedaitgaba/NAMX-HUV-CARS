@@ -1,5 +1,5 @@
 import React from 'react'
-import CarsPub from '../components/CarsPub'
+import CarsPub from '../components/homeComponnents/CarsPub'
 const Home=()=>{
   return (
     <CarsPub/>
