@@ -1,5 +1,4 @@
 import React from "react";
-
 function CarsPub() {
   const cars:{ pic_url: string, pic_description: string,title:string }[] = [
     {
