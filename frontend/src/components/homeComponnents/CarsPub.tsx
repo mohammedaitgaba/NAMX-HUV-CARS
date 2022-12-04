@@ -18,16 +18,18 @@ function CarsPub() {
     },
   ];
   return (
-    <div className="Cars_container flex flex-wrap items-center justify-around lg:px-24 py-12 ">
-        {
-            cars.map((car,i)=>(
-                <div className="Car px-4 w-80 flex flex-col justify-center items-center" key={i}>
-                <img src={car.pic_url} alt={car.pic_description} />
-                <p>{car.title}</p>
-              </div>
-            ))
-        }
-
+    <div className="flex flex-col justify-center items-center">
+      <div className="Cars_container w-full flex flex-wrap items-center justify-around lg:px-24 py-12 ">
+          {
+              cars.map((car,i)=>(
+                  <div className="Car px-4 w-80 flex flex-col justify-center items-center" key={i}>
+                  <img src={car.pic_url} alt={car.pic_description} />
+                  <p>{car.title}</p>
+                </div>
+              ))
+          }
+      </div>
+      <hr className="w-4/5 h-5" />
     </div>
   );
 }
