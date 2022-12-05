@@ -3,6 +3,7 @@ import CarsPub from '../components/homeComponnents/CarsPub'
 import Banner from '../components/homeComponnents/Banner'
 import NamxInfo from '../components/homeComponnents/NamxInfo'
 import NamxCarBanner from '../components/homeComponnents/NamxCarBanner'
+import CostimizerPub from '../components/homeComponnents/CostimizerPub'
 const Home=()=>{
   return (
     <>
@@ -10,6 +11,7 @@ const Home=()=>{
       <CarsPub/>
       <NamxInfo/>
       <NamxCarBanner/>
+      <CostimizerPub/>
     </>
   )
 }
