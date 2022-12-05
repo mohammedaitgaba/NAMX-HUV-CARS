@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import ContactUsButton from "../assets/images/bgButtonContactUs.png";
+import bgContactUs from "../assets/images/contactbgimage.png";
+import Logo from "../assets/images/Logo.png";
 
 const ContactUs = () => {
-
   return (
-    <section className="bg-senary h-screen flex justify-center items-center">
-      <div></div>
+    <section
+      className="bg-senary h-screen flex flex-col gap-10 justify-center items-center"
+      style={{
+        backgroundImage: `url(${bgContactUs})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div>
+        <div className="flex justify-center">
+          <img src={Logo} alt="Logo" />
+        </div>
+      </div>
 
       <div className="bg-quinary w-1/2 lg:w-1/3 flex flex-col justify-center items-center relative">
         {/* Header */}

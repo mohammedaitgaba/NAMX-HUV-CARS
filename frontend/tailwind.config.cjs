@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Nunito']
+      }
+    },
     colors: {
       // primary and secondary are the dominant colors
       primary: "#BD3944", // red (dark)
