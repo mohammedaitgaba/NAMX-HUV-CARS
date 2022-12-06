@@ -16,6 +16,7 @@ module.exports = {
       quaternary: "#111111", // black (dark) -> for text
       quinary: "white", // white -> for text
       senary: "#232122", // bg color (dark)
+      gray: "#F4F4F4"
     },
   },
   plugins: [],
