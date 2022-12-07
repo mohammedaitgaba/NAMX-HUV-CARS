@@ -86,21 +86,19 @@ function NavBar() {
             {
                 isLogged?
                 <li onClick={()=>sign_out()}>
-                <a
-                  href="#"
-                  className="block py-3 px-4 bg-primary  rounded-2xl  md:border-0  md:py-3 md:px-4 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <div
+                  className="block py-3 px-4 border-none bg-primary  rounded-2xl  md:border-0  md:py-3 md:px-4 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   sign out
-                </a>
+                </div>
               </li>
               :            
               <li onClick={()=>sign_in()}>
-              <a
-                href="#"
-                className="block py-3 px-4 bg-primary  rounded-2xl  md:border-0  md:py-3 md:px-4 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              <div
+                className="block py-3 px-4 bg-primary cursor-pointer rounded-2xl  md:border-0  md:py-3 md:px-4 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 sign in
-              </a>
+              </div>
             </li>
             }
 

@@ -15,8 +15,8 @@ function CostimizerPub() {
           <div className="[grid-area:1/1] absolute bottom-0 right-0 flex items-center  "></div>
         </div>
         <div className="flex flex-col  md:flex md:flex-row  w-3/4  justify-between items-center">
-          <div className="w-[70%] min-w-[300px] max-w-[450px]">
-            <img src="Pics/Namx_cars_pics/nissanjuke.gif" alt="gif" />
+          <div className="w-[70%] min-w-[300px] max-w-[450px] ">
+            <img className="rounded-[60px]" src="Pics/Namx_cars_pics/nissanjuke.gif" alt="gif" />
           </div>
           <div className="flex flex-col text-lg max-w-sm pt-6 pl-6 ">
             <span className="font-bold mb-3">
