@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import AuthModal from "./AuthModal";
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
+  const [openAuthModal, setOpenAuthModal] = useState<Boolean>(false);
 
   const sign_out = () => {
     setIsLogged(false)
   };
-  const sign_in = () => {
-    setIsLogged(true)
+
+  const Auth_modal = () => {
+    
+    setOpenAuthModal(true)
   };
   const active = () => {
     setNavbar(!navbar);
@@ -93,7 +97,7 @@ function NavBar() {
                 </div>
               </li>
               :            
-              <li onClick={()=>sign_in()}>
+              <li onClick={()=>Auth_modal()}>
               <div
                 className="block py-3 px-4 bg-primary cursor-pointer rounded-2xl  md:border-0  md:py-3 md:px-4 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
@@ -106,7 +110,9 @@ function NavBar() {
           </ul>
         </div>
       </div>
+      <AuthModal Open={openAuthModal} Close={()=>setOpenAuthModal(false)}/>
     </nav>
+    // 
   );
 }
 
