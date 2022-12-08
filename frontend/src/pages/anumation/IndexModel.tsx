@@ -9,7 +9,7 @@ import { Car } from "../../pages/anumation/Car";
 
 const IndexModel = () => {
     return (
-        <div>
+        <div className='h-screen'>
             <Canvas className="flex justify-center">
                 <OrbitControls enableZoom={false} />
                 <ambientLight intensity={0.5} />
