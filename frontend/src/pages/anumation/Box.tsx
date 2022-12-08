@@ -1,12 +1,9 @@
 import React from "react";
 
 import { useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three/src/loaders/TextureLoader"; 
 import texture from "../../assets/images/cars/namx-ban.webp"
 
-const Model = () => {
-
-    const colorMap = useLoader(TextureLoader, texture);
+const Box = () => {
     
     return (
         <mesh rotation={[90, 0, 20]}>
@@ -16,4 +13,4 @@ const Model = () => {
     );
 };
 
-export default Model;
+export default Box;
