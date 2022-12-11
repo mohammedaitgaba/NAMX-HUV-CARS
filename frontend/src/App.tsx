@@ -5,8 +5,7 @@ import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import PreOrder from "./pages/PreOrder/PreOrder";
-import IndexModel from "./pages/anumation/IndexModel"
-
+import Costimizer from "./pages/Costimizer";
 
 function App() {
     return (
@@ -17,7 +16,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/preOrder" element={<PreOrder />} />
-                    <Route path="/model" element={<IndexModel />} />
+                    <Route path="/costimizer" element={<Costimizer />} />
                 </Routes>
             </BrowserRouter>
         </div>
