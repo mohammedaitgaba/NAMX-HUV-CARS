@@ -22,6 +22,7 @@
     "primeicons": "^6.0.1",
     "primereact": "^8.7.3",
     "react": "^18.2.0",
+    "react-color-palette": "^6.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5",
     "react-three-fiber": "^6.0.13",
