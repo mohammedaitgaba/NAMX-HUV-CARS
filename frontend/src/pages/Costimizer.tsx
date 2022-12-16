@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState,useEffect } from "react";
+import React, { Suspense, useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
@@ -7,8 +7,8 @@ import { proxy, useSnapshot } from "valtio";
 
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
-import sound from '../assets/Sounds/namx_engine1.mp3'
-import sound2 from '../assets/Sounds/namx_engine2.mp3'
+import sound from "../assets/Sounds/namx_engine1.mp3";
+import sound2 from "../assets/Sounds/namx_engine2.mp3";
 
 const Costimizer = () => {
   const CarParts = proxy({
@@ -24,36 +24,41 @@ const Costimizer = () => {
       wheels: "#111111",
     },
   });
-  const [carData,setCarData] = useState({
-      bodyColor:"",
-      windowsColor: "",
-      carSkeleton: "",
-      backSkeleton: "#111111",
-      frontSkeleton: "",
-      backLightsAndLogo: "",
-      frontLights: "",
-      wheels: "",
-    engine_type:""
-
-  })
-  const {bodyColor,windowsColor,carSkeleton,backSkeleton,backLightsAndLogo,frontLights,wheels,engine_type}=carData
-  const handleChange = (e:any)=>{
-    setCarData((previousState)=>({
-        ...previousState,
-        [e.target.name] : e.target.value,
-    }))
-}
-console.log(carData);
-
-  
+  const [carData, setCarData] = useState({
+    bodyColor: "",
+    windowsColor: "",
+    carSkeleton: "",
+    backSkeleton: "#111111",
+    frontSkeleton: "",
+    backLightsAndLogo: "",
+    frontLights: "",
+    wheels: "",
+    engine_type: "",
+  });
+  const {
+    bodyColor,
+    windowsColor,
+    carSkeleton,
+    backSkeleton,
+    backLightsAndLogo,
+    frontLights,
+    wheels,
+    engine_type,
+  } = carData;
+  const handleChange = (e: any) => {
+    setCarData((previousState) => ({
+      ...previousState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  console.log(carData);
 
   const ok = () => {};
-
 
   function Car(props: JSX.IntrinsicElements["group"]) {
     const ref = useRef();
     const myCar = useSnapshot(CarParts);
-    const [hovered, sethovered] = useState(null)
+    const [hovered, sethovered] = useState(null);
     // useFrame(()=>(ref.current.rotation.z +=0.008))
 
     const { nodes, materials } = useGLTF(
@@ -67,10 +72,10 @@ console.log(carData);
           position={[-0.01, 0.8, -0.5]}
           rotation={[-Math.PI / 2.1, 0, 0]}
           scale={1}
-        //   onPointerOver = {(e)=>{e.stopPropagation(),sethovered(e.eventObject.group),console.log(CarParts.current);}}
-        //   onPointerOut = {(e)=>(e.intersections.length === 0 && sethovered(null))}
-        //   onPointerDown = {(e)=>(e.stopPropagation(),CarParts.current = e.eventObject.material)}
-        //   onPointerMissed = {(e)=>(CarParts.current = null)}
+          //   onPointerOver = {(e)=>{e.stopPropagation(),sethovered(e.eventObject.group),console.log(CarParts.current);}}
+          //   onPointerOut = {(e)=>(e.intersections.length === 0 && sethovered(null))}
+          //   onPointerDown = {(e)=>(e.stopPropagation(),CarParts.current = e.eventObject.material)}
+          //   onPointerMissed = {(e)=>(CarParts.current = null)}
         >
           <mesh
             geometry={nodes.window_rear_0.geometry}
@@ -271,7 +276,7 @@ console.log(carData);
           {/* frontcar */}
           <mesh
             geometry={nodes.boot008_0.geometry}
-              material={materials.paint}
+            material={materials.paint}
           />
           <mesh
             geometry={nodes.boot009_0.geometry}
@@ -297,12 +302,8 @@ console.log(carData);
       </group>
     );
   }
-  function handleSound(e:String){
-    e==="engine1"?
-    new Audio(sound).play():
-    new Audio(sound2).play()
-
-    
+  function handleSound(e: String) {
+    e === "engine1" ? new Audio(sound).play() : new Audio(sound2).play();
   }
   useGLTF.preload("../../../public/model/car.gltf");
 
@@ -329,52 +330,106 @@ console.log(carData);
       <div className="absolute top-14">
         <div>
           <p>full car</p>
-          <input type="color" name="bodyColor" className="" value={bodyColor} onChange={handleChange}/>
+          <input
+            type="color"
+            name="bodyColor"
+            className=""
+            value={bodyColor}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>back car</p>
-          <input type="color" name="backSkeleton" value={backSkeleton} onChange={handleChange}/>
+          <input
+            type="color"
+            name="backSkeleton"
+            value={backSkeleton}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>windows</p>
-          <input type="color" name="windowsColor" value={windowsColor} onChange={handleChange}/>
+          <input
+            type="color"
+            name="windowsColor"
+            value={windowsColor}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>Attachment</p>
-          <input type="color" name="carSkeleton" value={carSkeleton} onChange={handleChange}/>
+          <input
+            type="color"
+            name="carSkeleton"
+            value={carSkeleton}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>back Lights And Logo</p>
-          <input type="color" name="backLightsAndLogo" value={backLightsAndLogo} onChange={handleChange}/>
+          <input
+            type="color"
+            name="backLightsAndLogo"
+            value={backLightsAndLogo}
+            onChange={handleChange}
+          />
         </div>
       </div>
       <div className="absolute right-4 top-14">
         <div>
           <p>Wheels Color</p>
-          <input type="color" name="wheels" value={wheels} onChange={handleChange}/>
+          <input
+            type="color"
+            name="wheels"
+            value={wheels}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>front Lights</p>
-          <input type="color" name="frontLights" value={frontLights} onChange={handleChange}/>
+          <input
+            type="color"
+            name="frontLights"
+            value={frontLights}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>Engine type</p>
-          <select name="engine_type" value={engine_type} onChange={(e)=> {handleChange;handleSound(e.target.value)}}>
-            <option value="" selected >select engine __</option>
+          <select
+            name="engine_type"
+            value={engine_type}
+            onChange={(e) => {
+              handleChange;
+              handleSound(e.target.value);
+            }}
+          >
+            <option value="" selected>
+              select engine __
+            </option>
             <option value="engine 1">engine 1</option>
             <option value="engine 2">engine 2</option>
           </select>
         </div>
         <div>
           <p>back car Color</p>
-          <input type="color" name="backSkeleton" value={backSkeleton} onChange={handleChange}/>
+          <input
+            type="color"
+            name="backSkeleton"
+            value={backSkeleton}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <p>back car Color</p>
-          <input type="color" name="backSkeleton" value={backSkeleton} onChange={handleChange}/>
+          <input
+            type="color"
+            name="backSkeleton"
+            value={backSkeleton}
+            onChange={handleChange}
+          />
         </div>
       </div>
-
     </div>
   );
 };
