@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import PreOrder from "./pages/PreOrder/PreOrder";
 import Costimizer from "./pages/Costimizer";
-
+import Dushboard from "./pages/Admin/dushboard";
 function App() {
     return (
         <div className="App font-body">
@@ -17,6 +17,7 @@ function App() {
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/preOrder" element={<PreOrder />} />
                     <Route path="/costimizer" element={<Costimizer />} />
+                    <Route path="/dushboard" element={<Dushboard />} />
                 </Routes>
             </BrowserRouter>
         </div>
