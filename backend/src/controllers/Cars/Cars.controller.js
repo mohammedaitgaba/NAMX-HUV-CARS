@@ -1,7 +1,10 @@
 const Car = require("../../models/Car/Car.model");
 
 const getAllCars = async (req, res) => {
-  const cars = await Car.find({});
+  const cars = await Car.find({
+    Deleted: false,
+
+  }).select({Deleted:0,__v:0})
   if (!cars) {
     res.status(500).send({ message: "Error data" });
   }
