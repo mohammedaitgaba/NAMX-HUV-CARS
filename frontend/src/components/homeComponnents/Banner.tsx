@@ -1,7 +1,7 @@
 import React from "react";
 import CarBackground from "../../assets/gifs/homeBackground.gif";
 import PrimaryButton from "../../layouts/button/PrimaryButton.jsx";
-function Banner() {
+function  Banner() {
   const GotoBuyPage = () => {
     console.log("namx");
   };

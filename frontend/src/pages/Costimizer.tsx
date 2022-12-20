@@ -59,7 +59,7 @@ const Costimizer = () => {
     const ref = useRef();
     const myCar = useSnapshot(CarParts);
     const [hovered, sethovered] = useState(null);
-    // useFrame(()=>(ref.current.rotation.z +=0.008))
+    useFrame(()=>(ref.current.rotation.z +=0.008))
 
     const { nodes, materials } = useGLTF(
       "../../../public/model/car.gltf"
@@ -411,7 +411,7 @@ const Costimizer = () => {
             <option value="engine 2">engine 2</option>
           </select>
         </div>
-        <div>
+        {/* <div>
           <p>back car Color</p>
           <input
             type="color"
@@ -428,7 +428,7 @@ const Costimizer = () => {
             value={backSkeleton}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

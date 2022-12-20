@@ -11,6 +11,10 @@ const Car = mongoose.model(
       required: true,
       default : 60000,
     },
+    Deleted:{
+      type:Boolean,
+      default:false
+    }
   })
 );
 module.exports = Car;
